@@ -1,0 +1,539 @@
+/*Body styles:defining default font,text color,background using gradient*/
+body{
+    font-family:"Times New Roman";
+    color:black;
+    background-image:linear-gradient(135deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+    padding:20px;
+    border-radius:15px;
+}
+
+/*Container:defining grid layout for different sections*/
+.container{
+    display:grid;
+    grid-template-areas: 
+        "header header"
+        "about about"
+        "papers papers"
+        "books books"
+        "experiences experiences"
+        "hobbies images"
+        "blogs blogs"
+        "footer footer";
+    gap:15px;
+}
+
+/*Section:defining padding,rounded corners and hover effect*/
+section{
+    border-radius:15px;
+    padding:10px;
+    box-shadow:2px 4px 8px rgba(0,0,0,0.8);
+    transition:transform 0.5s ease-in-out; 
+}
+section:hover {
+    transform:scale(1.02);
+}
+
+/*Defining Header*/
+header{
+    grid-area:header;
+    display:grid;
+    grid-template-columns:1fr auto;
+    grid-template-areas:
+        "content menu-icon"
+        "nav nav";
+    background-image:linear-gradient(315deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+    box-shadow:2px 4px 8px rgba(0,0,0,0.8);
+    padding:10px;
+    border-radius:10px;
+}
+
+/*Header-content*/
+.header-content{
+    grid-area:content;
+    text-align:center;
+    margin-top:0px;
+}
+.menu-icon{
+    display:none;
+    grid-area:menu-icon;
+}
+.menu-icon div{
+    width:30px;
+    height:4px;
+    background-color:black;
+    margin:5px 20px;
+}
+
+/*Navigation in header*/
+header nav{
+    grid-area:nav;
+    display:grid;
+    grid-template-columns:repeat(8,1fr);
+    justify-items:center;
+    margin-top:10px;
+}
+
+/*Navigation links*/
+header nav a{
+    text-decoration:none;
+    font-size:1.2rem;
+    color:#1b1b1e;
+    font-weight:bold;
+    padding:10px 15px;
+    border-radius:8px;
+    box-shadow:4px 6px 8px rgba(225, 5, 137, 0.8);
+}
+
+/*Navigation links hover effect*/
+header nav a:hover{
+    background-color:#191819;
+    color:white;
+    box-shadow:0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/*Responsive styles*/
+@media screen and (max-width:768px) {
+    header {
+        grid-template-columns:1fr auto;
+    }
+    .menu-icon {
+        display:block;
+    }
+    header nav {
+        display:none;
+        grid-template-columns:1fr;
+    }
+    header nav.active {
+        display:grid;
+    }
+    header nav a {
+        margin:5px 0;
+        width:100px;
+        text-align:center;
+    }
+}
+
+/*h3 heading styles*/
+h3{
+    display:inline-block;
+    padding:10px 20px;
+    border:1px solid #d4ccd2;
+    border-radius:8px;
+    background-color:rgba(255, 255, 255, 0.8);
+    color:#101112;
+    box-shadow:4px 6px 8px rgba(29, 28, 28, 0.8);
+    margin-bottom:20px; 
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+/*h3 heading hover effect*/
+h3:hover{
+    text-decoration:none;
+    box-shadow: 0 6px 12px rgba(0,0,1.0,1.8);
+    color:rgb(18, 11, 246);
+}
+
+/*Paragraph styles*/
+p{
+    line-height: 1.6;
+    color: #171616;
+}
+
+/*Defining about section*/
+#about{
+    grid-area:about;
+    padding:10px;
+    background-color:#FFDEE9;
+    background-image:linear-gradient(315deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+    border-radius:10px;
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+/*About section grid*/
+.about-grid{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+/*Photo styles*/
+.photo{
+    text-align:center;
+}
+.photo img{
+    border-radius:10px;
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.8); 
+}
+.photo p{
+    font-weight:bold;
+    margin-top:10px;
+}
+
+/*About text styles*/
+.about-text{
+    text-align:justify;
+}
+.about-text p{
+    margin:30px;
+    margin-top:0px;
+}
+
+/*Papers section styles*/
+#papers{
+    grid-area:papers;
+    padding:20px;
+    background-image:linear-gradient(135deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+    box-shadow:2px 4px 8px rgba(0,0,0,0.8);
+    border-radius:8px;
+}
+
+/*Papers grid 5-column layout with 20px gap*/
+.papers-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+    justify-items:center;
+    text-align:center;
+}
+
+/*Papers hover effect*/
+.paper:hover{
+    text-decoration:underline;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.8);
+    color:rgb(212, 49, 49);
+    border-radius:6px; 
+}
+
+/*Papers images size*/
+.paper img{
+    width:200px; 
+    height:200px;
+    margin-bottom:30px;
+    border-radius:10px;
+}
+
+/*Papers links*/
+.paper a{
+    text-decoration:none;
+    color:rgb(2, 2, 2);
+    font-weight:bold;
+    text-align:center;
+}
+
+/*Defining books section*/
+#books{
+    grid-area:books;
+    padding:30px;
+    background-image:linear-gradient(135deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+}
+
+/*books grid 6-column layout with 15px gap*/
+.books-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:15px;
+}
+.book-card{
+    background-image:linear-gradient(62deg, #a4c8eb 0%, #eabce1 3%, #ffffff 56%, #ffffff 100%);
+    border-radius:10px;
+    box-shadow:2px 4px 8px rgba(0,0,0,0.1);
+    text-align:center;
+    padding:15px;
+}
+
+/*Book icon images*/
+.book-icon img{
+    width:170px; 
+    height:170px;
+    margin-bottom:10px;
+    border-radius:10px;
+}
+
+/*Book card heading*/
+.book-card h3{
+    font-weight:bold;
+    color:#333;
+}
+
+/*Book card hover effect*/
+.book-card:hover{
+    background-color:#bfb4bb;
+    color:rgb(212, 49, 49);
+    box-shadow:0 6px 12px rgba(0, 0, 0, 0.3);  
+}
+
+/*Defining Experience section*/
+#experiences{
+    grid-area:experiences;
+    padding:20px;
+    background-image:linear-gradient(135deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+    box-shadow:2px 4px 8px rgba(0,0,0,0.8);
+    border-radius:10px;
+}
+
+/*Experience grid*/
+.experience-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0px;
+}
+.experience-item h4{
+    color:#333;
+    font-size:1.4rem;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+/*Experience item list*/
+.experience-item ul{
+    list-style-type:disc;
+    margin-left:20px;
+}
+.experience-item ul li{
+    margin-bottom:10px;
+    font-size:1rem;
+    color:#1b1b1e;
+}
+
+/*Defining hobbies section*/
+#hobbies{
+    grid-area:hobbies;
+    background-image:linear-gradient(135deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+}
+
+/*Hobbies grid with 2 column layout with 20px gap*/
+.hobbies-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    justify-items:center;
+    text-align:center;
+    font-weight:bold;
+}
+
+/*Declaring hobby image size*/
+.hobby img{
+    width:250px;
+    height:250px;
+    border-radius:10px;
+    margin-bottom:0px;
+    border:4px solid #292527;
+}
+
+/*hobby hover effect*/
+.hobby img:hover{
+    background-color:#a02672;
+    color:rgb(21,20,20);
+    box-shadow:2px 6px 12px rgba(0, 0, 0, 0.9);
+}
+.hobbies-grid h3:hover{
+    background-color:#a9f4f8;
+    color:rgb(21,20,20);
+    box-shadow:2px 6px 12px rgba(0, 0, 0, 0.9); 
+}
+.hobbies-grid h3{
+    border:2px solid #fc05ba;
+}
+
+/*Defining images section*/
+#images{
+    grid-area:images;
+    background-image:linear-gradient(135deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+}
+.images p{
+    border:2px solid #fc05ba;
+    border-radius:8px;
+    background-color:white;
+    color:#101112;
+    box-shadow:2px 4px 8px rgba(0,0,0,0.8);
+}
+
+/*Images grid with 2 column layout with 20px gap*/
+.images-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    justify-items:center;
+    font-weight:bold;
+    text-align:center;
+}
+
+/*Image styles*/
+.image{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    border:4px solid #292527;
+    border-radius:10px;
+}
+
+/*Image hover effects*/
+.image:hover{
+    background-color:#a9f4f8;
+    color:rgb(21,20,20);
+    box-shadow:2px 6px 12px rgba(0, 0, 0, 0.9);
+}
+.images p:hover{
+    background-color:#e4b2d1;
+    color:rgb(21, 20, 20);
+    box-shadow:0 6px 12px rgba(0, 0, 0, 0.9);
+}
+
+/*Defining blogs section*/
+#blogs{
+    background-image:linear-gradient(135deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+    padding:20px;
+    grid-area:blogs;
+}
+
+/*Images grid with 4 column layout with 25px gap*/
+.blogs-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+.blog-card{
+    background-color:rgb(187, 230, 240);
+    border-radius:10px;
+    box-shadow:4px 4px 6px rgba(0, 0, 0.3, 1.4);
+    padding:10px;
+    display:grid;
+    grid-template-rows:1fr auto;
+    gap:5px;
+    text-align: center;
+}
+
+/*Desining view blog button*/
+.view-blog-btn{
+    background-color:#ee42bb;
+    color:white;
+    text-decoration:none;
+    padding:10px;
+    border-radius:5px;
+    text-align:center;
+    justify-self:start;
+    transition:background-color 0.3s;
+}
+
+/*View blog button hover effect*/
+.view-blog-btn:hover{
+    background-color:#252728;
+}
+
+/*Footer section*/
+#footer{
+    grid-area:footer;
+}
+
+footer{
+    background-image:linear-gradient(135deg, #FFDEE9 0%, #caf9f8 33%, #ffffff 66%, #ffffff 100%);
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.8);
+    text-align:center;
+    padding:10px;
+    border-radius:8px;
+}
+
+/*Social icons in footer*/
+.social-icons{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    justify-content:center;
+    gap:150px;
+    margin-bottom:10px;
+}
+
+/*Styling each icons*/
+.social-icons img{
+    width:30px;
+    height:30px;
+}
+
+footer p{
+    margin:5px 0;
+    color:#073b4c;
+}
+
+.social-icons img:hover {
+    background-color:#e4b2d1;
+    color:rgb(21, 20, 20);
+    box-shadow:0 6px 12px rgba(0, 0, 0, 0.9);
+}
+
+/*Footer copyright information*/
+.copyright{
+    font-size:12px;
+    color: #666;
+}
+
+/*Code for responsive layout*/
+@media (max-width:768px){
+    .container{
+        grid-template-areas:
+        "header header"
+        "about about"
+        "papers papers"
+        "books books"
+        "experiences experiences"
+        "hobbies hobbies"
+        "images images"
+        "blogs blogs"
+        "footer footer";
+    }
+    /*Adjusting header for smaller screens*/
+    header{
+        grid-template-columns:1fr;
+        align-items:center;
+        gap:0px;
+    }
+    header nav{
+        grid-template-columns:1fr;
+        align-items:left;
+        gap:5px;
+    }
+    /*Making about section in single column*/
+    .about-grid{
+        grid-template-columns:1fr;
+        gap:0px;
+    }
+    /*Making all grids responsive*/
+    .papers-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+    .books-grid{
+        grid-template-columns:1fr;
+    }
+    .experience-grid{
+        gap:0px;
+    }
+    .blogs-grid{
+        grid-template-columns:1fr;
+    }
+    .hobbies-grid{
+        grid-area:hobbies;
+    }
+    .images-grid{
+        grid-area:images;
+    }
+    /*Adjusting images size in hobbies and images section*/
+    .hobby img,
+    .images img{
+        width:250px;
+        height:250px;
+    }
+    #hobbies h3 {
+        display: block;
+        text-align:center;
+    }
+    .hobbies-grid,
+    .images-grid{
+        grid-template-columns:1fr;
+    }
+    /*social media icons in footer*/
+    .social-icons{
+        grid-template-columns:(2,1fr); 
+        gap:0px;
+    }
+}
